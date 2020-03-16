@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using H_EstateAgency2.Models;
 
 namespace H_EstateAgency2.Controllers
-{
+{  
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
