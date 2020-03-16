@@ -10,6 +10,9 @@ using H_EstateAgency2.Models;
 namespace H_EstateAgency2.Controllers
 {  
 
+
+
+    //test
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
