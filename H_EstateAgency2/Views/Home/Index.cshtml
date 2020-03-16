@@ -1,0 +1,39 @@
+﻿@model IEnumerable<H_EstateAgency2.Models.Property>
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<table class="table" border="1">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pictures)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+       
+
+        @*@foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    <img height="42" width="42" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.pictures))" />
+                    @Html.DisplayNameFor(model => item.PropertyId);
+                </td>
+
+            </tr>
+        }*@
+
+    </tbody>
+</table>

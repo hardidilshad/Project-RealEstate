@@ -1,0 +1,30 @@
+﻿@model H_EstateAgency2.Models.Picture
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Picture</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.photo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.photo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PicName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PicName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PicId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
