@@ -8857,11 +8857,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FATEH\\source\\repos\\H_EstateAgency2\\H_EstateAgency2\\H_EstateAgency2.csproj",
+      "projectUniqueName": "C:\\Users\\FATEH\\source\\repos\\New folder\\H_EstateAgency2\\H_EstateAgency2\\H_EstateAgency2.csproj",
       "projectName": "H_EstateAgency2",
-      "projectPath": "C:\\Users\\FATEH\\source\\repos\\H_EstateAgency2\\H_EstateAgency2\\H_EstateAgency2.csproj",
+      "projectPath": "C:\\Users\\FATEH\\source\\repos\\New folder\\H_EstateAgency2\\H_EstateAgency2\\H_EstateAgency2.csproj",
       "packagesPath": "C:\\Users\\FATEH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FATEH\\source\\repos\\H_EstateAgency2\\H_EstateAgency2\\obj\\",
+      "outputPath": "C:\\Users\\FATEH\\source\\repos\\New folder\\H_EstateAgency2\\H_EstateAgency2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

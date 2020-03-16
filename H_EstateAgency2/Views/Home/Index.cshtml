@@ -1,4 +1,4 @@
-﻿@model IEnumerable<H_EstateAgency2.Models.Property>
+﻿@model List<H_EstateAgency2.Models.Property>
 
 
 <div class="text-center">
@@ -7,33 +7,29 @@
 </div>
 
 <table class="table" border="1">
-    <thead>
-        <tr>
-
-            <th>
-                @Html.DisplayNameFor(model => model.PropertyId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.pictures)
-            </th>
-
-        </tr>
-    </thead>
+   
     <tbody>
 
-       
-
-        @*@foreach (var item in Model)
+        @foreach (var item in Model)
         {
-            <tr>
+        <tr>
 
-                <td>
-                    <img height="42" width="42" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.pictures))" />
-                    @Html.DisplayNameFor(model => item.PropertyId);
-                </td>
+            <td>
+                @item?.PropertyId
+            </td>
 
-            </tr>
-        }*@
+            <td>
+                @item?.PropertyTitle
+            </td>
+
+            <td>
+                <img height="42" width="42" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.pictures.FirstOrDefault().photo))" />
+
+
+            </td>
+
+        </tr>
+        }
 
     </tbody>
 </table>
