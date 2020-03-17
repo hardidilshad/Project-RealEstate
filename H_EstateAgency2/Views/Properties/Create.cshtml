@@ -21,17 +21,11 @@
             <div class="form-group">
                 <label asp-for="PropertyType" class="control-label">Type of Property</label>
                 <br />
-                <select asp-for="PropertyType"  class="form-control"
+                <select asp-for="PropertyType" class="form-control"
                         asp-items="@(new SelectList(@ViewBag.listoftypes,"PTypeName","PTypeName"))">
                 </select>
                 <span asp-validation-for="PropertyType" class="text-danger"></span>
             </div>
-
-            @*<div class="form-group">
-            <label asp-for="PropertyType" class="control-label"></label>
-            <input asp-for="PropertyType" class="form-control" />
-            <span asp-validation-for="PropertyType" class="text-danger"></span>
-        </div>*@
 
             <div class="form-group">
                 <label asp-for="PropertyCity" class="control-label">City of the Property</label><br />
@@ -69,8 +63,15 @@
 
             <div class="form-group">
                 <label asp-for="PublishingDate" class="control-label">Publishing Date</label>
-                <input asp-for="PublishingDate" class="form-control"  type="date"/>
+                <input asp-for="PublishingDate" class="form-control" type="date" />
                 <span asp-validation-for="PublishingDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Description</label>
+                @*<textarea name="comment" form="usrform" asp-for="Description" class="form-control">Enter text here...</textarea>*@
+                <input asp-for="Description" class="form-control" type="text" />
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">

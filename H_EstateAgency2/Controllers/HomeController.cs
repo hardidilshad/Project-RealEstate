@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using H_EstateAgency2.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace H_EstateAgency2.Controllers
 {
@@ -49,5 +50,10 @@ namespace H_EstateAgency2.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        
+
+
     }
 }

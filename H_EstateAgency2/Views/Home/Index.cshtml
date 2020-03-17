@@ -2,50 +2,34 @@
 
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4" style="font-size:42px">Welcome to H-Estate Agency </h1>
+    <p style="font-size:14PX">FIND YOUR DESIERED PROPERTY EASILY</p>
 </div>
-
-<table class="table" border="1">
-
-    <tbody>
-
-        @foreach (var item in Model)
-        {
-
+<hr/>
+<form class="form-inline d-flex justify-content-center md-form form-sm mt-0" style="margin-bottom:22px" >
+    <i class="fas fa-search" aria-hidden="true"></i>
+    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+           aria-label="Search">
+</form>
 
 
+<div class="row" style="margin-bottom:9px">
+    @foreach (var item in Model)
+    {
+        <div class="col-3">
+            <div class="card" style="width: 16rem;">
+                <img style="width: 16rem; height:15rem" class="card-img-top" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.pictures.FirstOrDefault().photo))" alt="Card image">
+                <div class="card-body">
+                    <h6 class="card-title">@item?.PropertyTitle</h6>
+             
+                    <p class="card-text" style="font-size:12px">@item?.PropertyCity / @item?.PropertyArea </p>
+             
+                    <hp class="card-text" style="font-size:12px">@item?.PropertyPrice  $ </hp><br />
+                    <a class="btn btn-primary" asp-controller="Properties" asp-action="Details" asp-route-id="@item.PropertyId">Read More...</a>
+                </div>
+            </div>
 
-            <tr>
-
-                <td>
-                    @item?.PropertyId
-                </td>
-
-                <td>
-                    @item?.PropertyTitle
-                </td>
-
-                <td>
-                    <img height="42" width="42" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.pictures.FirstOrDefault().photo))" />
-
-
-                </td>
-
-            </tr>
-        }
-
-    </tbody>
-</table>
-@foreach (var item in Model)
-{
-
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.pictures.FirstOrDefault().photo))" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">@item?.PropertyTitle</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-    </div>
-}
+
+    }
+</div>

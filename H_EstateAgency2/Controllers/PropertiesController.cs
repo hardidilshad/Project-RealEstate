@@ -122,7 +122,7 @@ namespace H_EstateAgency2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PropertyId,PropertyType,PropertyTitle,PropertyCity,PropertyAddress,PropertyArea,PropertyPrice,PropertyYearOfBuilt,PropertyComBuilt,isAvailable")] Property @property)
+        public async Task<IActionResult> Edit(int id, [Bind("PropertyId,PropertyType,PropertyTitle,PropertyCity,PropertyAddress,PropertyArea,PropertyPrice,PropertyYearOfBuilt,PropertyComBuilt,isAvailable,Description")] Property @property)
         {
             if (id != @property.PropertyId)
             {
