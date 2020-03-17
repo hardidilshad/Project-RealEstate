@@ -7,29 +7,45 @@
 </div>
 
 <table class="table" border="1">
-   
+
     <tbody>
 
         @foreach (var item in Model)
         {
-        <tr>
-
-            <td>
-                @item?.PropertyId
-            </td>
-
-            <td>
-                @item?.PropertyTitle
-            </td>
-
-            <td>
-                <img height="42" width="42" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.pictures.FirstOrDefault().photo))" />
 
 
-            </td>
 
-        </tr>
+
+            <tr>
+
+                <td>
+                    @item?.PropertyId
+                </td>
+
+                <td>
+                    @item?.PropertyTitle
+                </td>
+
+                <td>
+                    <img height="42" width="42" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.pictures.FirstOrDefault().photo))" />
+
+
+                </td>
+
+            </tr>
         }
 
     </tbody>
 </table>
+@foreach (var item in Model)
+{
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.pictures.FirstOrDefault().photo))" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@item?.PropertyTitle</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+}
