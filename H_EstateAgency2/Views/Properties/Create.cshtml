@@ -19,6 +19,16 @@
             </div>
 
             <div class="form-group">
+                <label asp-for="Ppurpose" class="control-label">Purpose</label>
+                <br />
+                <select asp-for="Ppurpose" class="form-control"
+                        asp-items="@(new SelectList(@ViewBag.listofpurposes,"purposefor","purposefor"))">
+                </select>
+                <span asp-validation-for="PropertyType" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
                 <label asp-for="PropertyType" class="control-label">Type of Property</label>
                 <br />
                 <select asp-for="PropertyType" class="form-control"

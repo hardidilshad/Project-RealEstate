@@ -12,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using H_EstateAgency2.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace H_EstateAgency2
 {
@@ -35,6 +37,23 @@ namespace H_EstateAgency2
                .AddEntityFrameworkStores<AppDBContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            //services.AddMvc(options =>
+            //{
+            //    var policy = new AuthorizationPolicyBuilder()
+            //                    .RequireAuthenticatedUser()
+            //                    .Build();
+            //    options.Filters.Add(new AuthorizeFilter(policy));
+            //});
+
+            //services.AddIdentityCore<MatrimonialUser>()
+            //     .AddRoles<IdentityRole>()
+            //     .AddClaimsPrincipalFactory<UserClaimsPrincipalFactory<MatrimonialUser, IdentityRole>>()
+            //     .AddEntityFrameworkStores<AppDBContext>()
+            //     .AddDefaultTokenProviders()
+            //     .AddDefaultUI();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

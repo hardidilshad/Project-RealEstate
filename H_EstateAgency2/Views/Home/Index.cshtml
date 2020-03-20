@@ -1,17 +1,24 @@
 ﻿@model List<H_EstateAgency2.Models.Property>
 
 
-<div class="text-center">
-    <h1 class="display-4" style="font-size:42px">Welcome to H-Estate Agency </h1>
-    <p style="font-size:14PX">FIND YOUR DESIERED PROPERTY EASILY</p>
-</div>
-<hr/>
-<form class="form-inline d-flex justify-content-center md-form form-sm mt-0" style="margin-bottom:22px" >
+    <div class="text-center">
+        <img style="width:72px; height:72px; margin:10px; float:right" src="img/offer.png" alt="Alternate Text" />
+        
+        <img style="width:72px; height:72px; margin:10px; float:right" src="~/img/message.png" alt="Alternate Text" />
+        <img style="width:82px; height:62px; margin:10px; float:right" src="~/img/eye.png" alt="Alternate Text" />
+        <img style="width:82px; height:72px; margin:10px; float:right" src="~/img/cintact.png" alt="Alternate Text" />
+    </div>
+<hr />
+<p style="font-size:14PX; float:none">FIND YOUR DESIERED PROPERTY EASILY</p>
+
+<form class="form-inline d-flex justify-content-center md-form form-sm mt-0" style="margin-bottom:22px">
     <i class="fas fa-search" aria-hidden="true"></i>
     <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
            aria-label="Search">
 </form>
-
+<br />
+<hr />
+<br />
 
 <div class="row" style="margin-bottom:9px">
     @foreach (var item in Model)
@@ -20,10 +27,10 @@
             <div class="card" style="width: 16rem;">
                 <img style="width: 16rem; height:15rem" class="card-img-top" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.pictures.FirstOrDefault().photo))" alt="Card image">
                 <div class="card-body">
-                    <h6 class="card-title">@item?.PropertyTitle</h6>
-             
+                    <h6 class="card-title">@item?.PropertyTitle   </h6> <h6 style="color:forestgreen"> For @item.Ppurpose</h6>
+
                     <p class="card-text" style="font-size:12px">@item?.PropertyCity / @item?.PropertyArea </p>
-             
+
                     <hp class="card-text" style="font-size:12px">@item?.PropertyPrice  $ </hp><br />
                     <a class="btn btn-primary" asp-controller="Properties" asp-action="Details" asp-route-id="@item.PropertyId">Read More...</a>
                 </div>

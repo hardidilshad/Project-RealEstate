@@ -88,6 +88,9 @@ namespace H_EstateAgency2.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Ppurpose")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PropertyAddress")
                         .HasColumnType("nvarchar(max)");
 
@@ -121,6 +124,21 @@ namespace H_EstateAgency2.Migrations
                     b.HasKey("PropertyId");
 
                     b.ToTable("Properties");
+                });
+
+            modelBuilder.Entity("H_EstateAgency2.Models.Purpose", b =>
+                {
+                    b.Property<int>("purposeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("purposefor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("purposeID");
+
+                    b.ToTable("Purpose");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

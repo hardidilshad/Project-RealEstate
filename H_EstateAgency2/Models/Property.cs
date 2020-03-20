@@ -12,6 +12,7 @@ namespace H_EstateAgency2.Models
         public int PropertyId { get; set; }
         public string PropertyType { get; set; }
         public string PropertyTitle { get; set; }
+        public string Ppurpose { get; set; }
 
         public string PropertyCity { get; set; }
         public string PropertyAddress { get; set; }

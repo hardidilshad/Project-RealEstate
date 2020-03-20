@@ -26,6 +26,7 @@ namespace H_EstateAgency2.Controllers
             return View(await _context.Pictures.ToListAsync());
         }
         // GET: Pictures/Details/5
+        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

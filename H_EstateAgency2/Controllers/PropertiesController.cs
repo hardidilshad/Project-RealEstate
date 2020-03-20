@@ -71,6 +71,14 @@ namespace H_EstateAgency2.Controllers
             //default label
             lit.Insert(0, new PType { PTypeId = 0, PTypeName = "--Select Type--", PTypeNo = 0 });
             ViewBag.listoftypes = lit;
+
+
+            //fetch list of post purpose
+            List<Purpose> lip = new List<Purpose>();
+            lip = _context.Purpose.ToList();
+            //default label
+            lip.Insert(0, new Purpose { purposeID = 0, purposefor = "--Select Purpose --" });
+            ViewBag.listofpurposes = lip;
             return View();
         }
 
@@ -90,7 +98,7 @@ namespace H_EstateAgency2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PropertyId,PropertyType,PropertyTitle,PropertyCity,PropertyAddress,PropertyArea,PropertyPrice,PropertyYearOfBuilt,PropertyComBuilt,isAvailable")] Property @property)
+        public async Task<IActionResult> Create([Bind("PropertyId,PropertyType,PropertyTitle,PropertyCity,PropertyAddress,PropertyArea,PropertyPrice,PropertyYearOfBuilt,PropertyComBuilt,isAvailable, Description, Ppurpose")] Property @property)
         {
             if (ModelState.IsValid)
             {
@@ -122,7 +130,7 @@ namespace H_EstateAgency2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PropertyId,PropertyType,PropertyTitle,PropertyCity,PropertyAddress,PropertyArea,PropertyPrice,PropertyYearOfBuilt,PropertyComBuilt,isAvailable,Description")] Property @property)
+        public async Task<IActionResult> Edit(int id, [Bind("PropertyId,PropertyType,PropertyTitle,PropertyCity,PropertyAddress,PropertyArea,PropertyPrice,PropertyYearOfBuilt,PropertyComBuilt,isAvailable,Description, Ppurpose")] Property @property)
         {
             if (id != @property.PropertyId)
             {
@@ -155,6 +163,7 @@ namespace H_EstateAgency2.Controllers
         // GET: Properties/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            
             if (id == null)
             {
                 return NotFound();
@@ -175,6 +184,7 @@ namespace H_EstateAgency2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+         
             var @property = await _context.Properties.FindAsync(id);
             _context.Properties.Remove(@property);
             await _context.SaveChangesAsync();
@@ -185,5 +195,7 @@ namespace H_EstateAgency2.Controllers
         {
             return _context.Properties.Any(e => e.PropertyId == id);
         }
+
+
     }
 }

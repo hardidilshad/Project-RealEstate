@@ -23,5 +23,6 @@ namespace H_EstateAgency2.Models
         public DbSet<PCity> PCitys { get; set; }
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<Property> Properties { get; set; }
+        public DbSet<H_EstateAgency2.Models.Purpose> Purpose { get; set; }
     }
 }
