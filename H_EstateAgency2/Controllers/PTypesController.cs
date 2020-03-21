@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using H_EstateAgency2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace H_EstateAgency2.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class PTypesController : Controller
     {
         private readonly AppDBContext _context;

@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using H_EstateAgency2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace H_EstateAgency2.Controllers
 {
+    [Authorize(Roles = "Staff, Admin")]
     public class PropertiesController : Controller
     {
         private readonly AppDBContext _context;
@@ -25,6 +27,7 @@ namespace H_EstateAgency2.Controllers
         }
 
         // GET: Properties/Details/5
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

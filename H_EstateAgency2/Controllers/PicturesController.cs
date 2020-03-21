@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using H_EstateAgency2.Models;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace H_EstateAgency2.Controllers
 {
+
+    [Authorize(Roles = "Staff, Admin")]
     public class PicturesController : Controller
     {
         private readonly AppDBContext _context;

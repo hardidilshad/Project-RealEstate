@@ -1,5 +1,6 @@
 ﻿using H_EstateAgency2.Models;
 using H_EstateAgency2.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace H_EstateAgency2.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdministrationController: Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;

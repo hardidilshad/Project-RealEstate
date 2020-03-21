@@ -34,7 +34,10 @@ namespace H_EstateAgency2
 
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
-               .AddEntityFrameworkStores<AppDBContext>();
+                .AddDefaultTokenProviders()
+                .AddDefaultUI()
+                .AddEntityFrameworkStores<AppDBContext>();
+              
             services.AddControllersWithViews();
             services.AddRazorPages();
 
@@ -71,7 +74,9 @@ namespace H_EstateAgency2
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            //app.UseMvc(routes => {
+            //    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}")
+            //});
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
