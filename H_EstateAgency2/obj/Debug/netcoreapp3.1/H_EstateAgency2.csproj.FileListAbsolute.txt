@@ -343,6 +343,7 @@ C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\bin\Debug
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\H_EstateAgency2.csprojAssemblyReference.cache
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\staticwebassets\H_EstateAgency2.StaticWebAssets.Manifest.cache
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\staticwebassets\H_EstateAgency2.StaticWebAssets.xml
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\H_EstateAgency2.MvcApplicationPartsAssemblyInfo.cs
@@ -355,6 +356,9 @@ C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\H_EstateAgency2.TagHelpers.output.cache
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\H_EstateAgency2.RazorCoreGenerate.cache
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Administration\CreateRole.cshtml.g.cs
+C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditRole.cshtml.g.cs
+C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ListRoles.cshtml.g.cs
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\PCities\Create.cshtml.g.cs
@@ -387,6 +391,7 @@ C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Purposes\Edit.cshtml.g.cs
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Purposes\Index.cshtml.g.cs
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -398,4 +403,4 @@ C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\H_EstateAgency2.csproj.CopyComplete
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\H_EstateAgency2.dll
 C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\H_EstateAgency2.pdb
-C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\H_EstateAgency2.csprojAssemblyReference.cache
+C:\Users\FATEH\source\repos\New folder\H_EstateAgency2\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditUsersInRoles.cshtml.g.cs

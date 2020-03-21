@@ -10,7 +10,7 @@ using H_EstateAgency2.Models;
 
 namespace H_EstateAgency2.Models
 {
-    public class AppDBContext : IdentityDbContext
+    public class AppDBContext : IdentityDbContext <ApplicationUser>
     {
 
 

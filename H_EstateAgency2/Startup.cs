@@ -33,23 +33,17 @@ namespace H_EstateAgency2
              options.UseSqlServer(Configuration.GetConnectionString("H_EstateAgencyConnection2")));
 
 
-           services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
                .AddEntityFrameworkStores<AppDBContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            //services.AddMvc(options =>
-            //{
-            //    var policy = new AuthorizationPolicyBuilder()
-            //                    .RequireAuthenticatedUser()
-            //                    .Build();
-            //    options.Filters.Add(new AuthorizeFilter(policy));
-            //});
 
-            //services.AddIdentityCore<MatrimonialUser>()
+
+            //services.AddIdentityCore<IdentityRole>()
             //     .AddRoles<IdentityRole>()
             //     .AddClaimsPrincipalFactory<UserClaimsPrincipalFactory<MatrimonialUser, IdentityRole>>()
-            //     .AddEntityFrameworkStores<AppDBContext>()
+             
             //     .AddDefaultTokenProviders()
             //     .AddDefaultUI();
 
