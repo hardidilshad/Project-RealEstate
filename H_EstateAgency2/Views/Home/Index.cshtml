@@ -1,26 +1,32 @@
 ﻿@model List<H_EstateAgency2.Models.Property>
 
 
-    <div class="text-center">
-        <img style="width:72px; height:72px; margin:10px; float:right" src="img/offer.png" alt="Alternate Text" />
-        
-        <img style="width:72px; height:72px; margin:10px; float:right" src="~/img/message.png" alt="Alternate Text" />
-        <img style="width:82px; height:62px; margin:10px; float:right" src="~/img/eye.png" alt="Alternate Text" />
-        <img style="width:82px; height:72px; margin:10px; float:right" src="~/img/cintact.png" alt="Alternate Text" />
-    </div>
+<div class="text-center">
+
+    <a asp-area="" asp-controller="Home" asp-action="Indexoffer">
+
+        <img style="width:32px; height:32px; margin:10px; float:right" src="img/offer.png" alt="Alternate Text" />
+    </a>
+
+    <img style="width:32px; height:32px; margin:10px; float:right" src="~/img/message.png" alt="Alternate Text" />
+    <img style="width:42px; height:32px; margin:10px; float:right" src="~/img/eye.png" alt="Alternate Text" />
+    <img style="width:42px; height:32px; margin:10px; float:right" src="~/img/cintact.png" alt="Alternate Text" />
+</div>
 <hr />
 <p style="font-size:14PX; float:none">FIND YOUR DESIERED PROPERTY EASILY</p>
 
-<form class="form-inline d-flex justify-content-center md-form form-sm mt-0" style="margin-bottom:22px">
-    <i class="fas fa-search" aria-hidden="true"></i>
-    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
-           aria-label="Search">
-</form>
+    <p>
+        <input id="SearchID" type="search" placeholder="Search by Protperty Name, Purpose or Type" value="@ViewData["GetPropertyDetail"]" name="PropertySearch" style="width: 500px" />
+        <input  id="SButton" type="button"  value="Search" class="btn btn-primary" /> |
+        <a asp-action="Index">Clear Search</a>
+    </p>
+
 <br />
 <hr />
 <br />
 
-<div class="row" style="margin-bottom:9px">
+
+<div id="Cont" class="row" style="margin-bottom:9px">
     @foreach (var item in Model)
     {
         <div class="col-3">
@@ -32,7 +38,7 @@
                     <p class="card-text" style="font-size:12px">@item?.PropertyCity / @item?.PropertyArea </p>
 
                     <hp class="card-text" style="font-size:12px">@item?.PropertyPrice  $ </hp><br />
-                    <a class="btn btn-primary" asp-controller="Properties" asp-action="Details" asp-route-id="@item.PropertyId">Read More...</a>
+                    <a class="btn btn-primary" data-value="1"    asp-controller="Properties" asp-action="Details" asp-route-id="@item.PropertyId">Read More...</a>
                 </div>
             </div>
 
@@ -40,3 +46,64 @@
 
     }
 </div>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script >
+   
+        $('#SButton').click(function () {
+
+
+            
+    var savedata = {    
+       "PropertySearch":$("#SearchID").val()
+    }; 
+
+
+            alert($("#SearchID").val());
+               $.ajax({
+                   "async": true,
+                   "crossDomain": true,
+                   "url": "/GetResults",
+                'dataType': 'json',
+                   "method": "POST",
+                headers: {
+'Accept': 'application/json',
+'Content-Type': 'application/json'
+},
+                "data":JSON.stringify(savedata)
+               }).done(function (response) {
+                   var tt = "";
+                    $("#Cont").empty();
+                console.log(response[0].picture)
+                for (var i = 0; i < response.length; i++) {
+                   
+                    $("#Cont").append(
+
+                        '<div class="col-3"><div class="card" style="width: 16rem;"> <img style="width: 16rem; height:15rem" class="card-img-top" src="data:image/png;base64,'+response[i].picture +'"alt="Card image"></div>    <div class="card-body"><h6 class="card-title">'+response[i].propertyTitle+' </h6> <h6 style="color:forestgreen"> For'+response[i].ppurpose+'</h6></div>                     <p class="card-text" style="font-size:12px">'+response[i].propertyCity +'/'+ response[i].propertyArea+' </p>                     <hp class="card-text" style="font-size:12px">'+response[i].propertyPrice+'  $ </hp><br />                    <a id="clb" class="btn btn-primary" href="/Properties/Details/'+response[i].propertyId+'" >Read More...</a></div>'
+
+
+
+
+
+                    );
+     
+                }
+            });
+        });
+
+    
+    $('#clb').click(function () {
+        alert( $('#clb').val());
+       
+    });
+     
+
+    function  Ahmedsafaa() {
+        alert( $('#clb').val());
+    }
+      
+  $("a").click(function(){
+    i=$(this).data("value");
+    $('#square').animate({'left': i * 360});
+});
+
+</script>

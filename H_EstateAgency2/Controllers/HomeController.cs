@@ -40,6 +40,47 @@ namespace H_EstateAgency2.Controllers
             return View(result);
         }
 
+
+
+
+        [HttpPost("GetResults")]
+        public async Task<IActionResult> Index([FromBody] PropertySearchModel searchModel)
+        {
+            var result = _context.Properties.Where(x => x.isAvailable == true && (EF.Functions.Like(x.PropertyTitle,'%'+ searchModel.PropertySearch +"%"))).ToList();
+
+            foreach (var item in result)
+            {
+                var img = _context.Pictures.Where(x => x.PropertyId == item.PropertyId).FirstOrDefault();
+                if (item.pictures == null) item.pictures = new List<Picture>();
+                item.pictures.Add(img);
+            }
+
+
+
+            List<SearchResultModel> op = new List<SearchResultModel>();
+            foreach(var  item in result)
+            {
+                op.Add(new SearchResultModel()
+                {
+                    PropertyTitle = item.PropertyTitle
+                    ,
+                    Ppurpose = item.Ppurpose
+                    ,
+                    PropertyCity = item.PropertyCity
+                    ,
+                    PropertyArea = item.PropertyArea
+                    ,
+                    PropertyPrice = item.PropertyPrice
+                    ,
+                    picture = Convert.ToBase64String(item.pictures.FirstOrDefault().photo)
+                    ,PropertyId=item.PropertyId
+
+                });
+            }
+
+            return Ok(op);
+        }
+
         public IActionResult Privacy()
         {
             return View();
