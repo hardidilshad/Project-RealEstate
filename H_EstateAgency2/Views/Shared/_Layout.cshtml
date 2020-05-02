@@ -118,7 +118,7 @@
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             con.invoke('SendMsg', $('#A').val(), $('#messageInput').val())
-            $('#messageInput').empty();
+            $('#messageInput').val(null);
         }
     });
 
