@@ -685,3 +685,5 @@ C:\Users\Ahmed Safaa\Source\Repos\hardidilshad\Project-RealEstate\H_EstateAgency
 C:\Users\Ahmed Safaa\Source\Repos\hardidilshad\Project-RealEstate\H_EstateAgency2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Chat.cshtml.g.cs
 C:\Users\Ahmed Safaa\Source\Repos\hardidilshad\Project-RealEstate\H_EstateAgency2\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\Ahmed Safaa\Source\Repos\hardidilshad\Project-RealEstate\H_EstateAgency2\obj\Debug\netcoreapp3.1\H_EstateAgency2.csprojAssemblyReference.cache
+C:\Users\FATEH\Source\Repos\hardidilshad\Project-RealEstate_5\H_EstateAgency2\obj\Debug\netcoreapp3.1\H_EstateAgency2.dll
+C:\Users\FATEH\Source\Repos\hardidilshad\Project-RealEstate_5\H_EstateAgency2\obj\Debug\netcoreapp3.1\H_EstateAgency2.pdb
