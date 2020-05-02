@@ -106,6 +106,9 @@ namespace H_EstateAgency2.Controllers
         }
 
 
+
+
+
         [HttpGet("AhmedSafaaa")]
         public IActionResult AhmedSafaaa()
         {
