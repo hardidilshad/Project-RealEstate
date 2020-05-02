@@ -24,7 +24,7 @@ namespace H_EstateAgency2.Controllers
             _logger = logger;
             _context = context;
       
-
+             
 
 
         }
