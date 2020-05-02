@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using H_EstateAgency2.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using H_EstateAgency2.Hubs;
 
 namespace H_EstateAgency2
 {
@@ -41,7 +42,7 @@ namespace H_EstateAgency2
               
             services.AddControllersWithViews();
             services.AddRazorPages();
-
+            services.AddSignalR();
 
 
             //services.AddIdentityCore<IdentityRole>()
@@ -64,17 +65,22 @@ namespace H_EstateAgency2
             }
             else
             {
+                app.UseDeveloperExceptionPage();
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+             //   app.UseHsts();
             }
-            app.UseHttpsRedirection();
+         //   app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSignalR(op =>
+            {
+                op.MapHub<Chat>("/chat");
+            });
             //app.UseMvc(routes => {
             //    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}")
             //});

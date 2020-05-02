@@ -23,21 +23,34 @@ namespace H_EstateAgency2.Controllers
         {
             _logger = logger;
             _context = context;
+      
+
+
+
         }
 
 
         public IActionResult Index()
         {
-            var result = _context.Properties.Where(x => x.isAvailable == true).ToList();
-
-            foreach (var item in result)
+            try
             {
-                var img = _context.Pictures.Where(x => x.PropertyId == item.PropertyId).FirstOrDefault();
-                if (item.pictures == null) item.pictures = new List<Picture>();
-                item.pictures.Add(img);
-            }
+                var result = _context.Properties.Where(x => x.isAvailable == true).ToList();
 
-            return View(result);
+                foreach (var item in result)
+                {
+                    var img = _context.Pictures.Where(x => x.PropertyId == item.PropertyId).FirstOrDefault();
+                    if (item.pictures == null) item.pictures = new List<Picture>();
+                    item.pictures.Add(img);
+                }
+
+                return View(result);
+            }
+            catch (Exception ex)
+            {
+
+                return View();
+            }
+       
         }
 
 
@@ -93,6 +106,13 @@ namespace H_EstateAgency2.Controllers
         }
 
 
+        [HttpGet("AhmedSafaaa")]
+        public IActionResult AhmedSafaaa()
+        {
+
+
+            return View();
+        }
         
 
 

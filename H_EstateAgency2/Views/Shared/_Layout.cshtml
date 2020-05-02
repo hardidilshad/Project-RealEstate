@@ -1,78 +1,139 @@
 ﻿@inject SignInManager<ApplicationUser> SigninManager;
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - H Estate Agency</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <script src="~/js/chat.js"></script>
+        <link href="~/css/chat.css" rel="stylesheet" />
+        <script src="~/lib/signalr/dist/browser/signalr.js"></script>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - H Estate Agency</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <img style="width: 52px; height:52px" src="~/img/logo.png" alt="Alternate Text" /></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
+    </head>
+    <body class="fixed-left">
+        <input id="A" type="hidden" value="@User.Identity.Name" />
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="PTypes" asp-action="Index">Types</a>
-                        </li>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <img style="width: 52px; height:52px" src="~/img/logo.png" alt="Alternate Text" /></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <partial name="_LoginPartial" />
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Properties" asp-action="Index">Properties</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="PTypes" asp-action="Index">Types</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="PCities" asp-action="Index">City</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="pictures" asp-action="Index">pictures</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Purposes" asp-action="Index">Purposes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administration" asp-action="createrole">CreateRole</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administration" asp-action="ListRoles">ListRoles</a>
-                        </li>
-                        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Properties" asp-action="Index">Properties</a>
+                            </li>
 
-                        <i class="fab fa-facebook-f" style="margin-left:100px; margin-top:10px"></i>
-                        <i class="fab fa-instagram" style="margin-left:10px; margin-top:10px"></i>
-                        <i class="fab fa-linkedin" style="margin-left:10px; margin-top:10px"></i>
-                        <i class="fab fa-twitter" style="margin-left:10px; margin-top:10px"></i>
-                    </ul>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="PCities" asp-action="Index">City</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="pictures" asp-action="Index">pictures</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Purposes" asp-action="Index">Purposes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administration" asp-action="createrole">CreateRole</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administration" asp-action="ListRoles">ListRoles</a>
+                            </li>
+                            <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+                            <i class="fab fa-facebook-f" style="margin-left:100px; margin-top:10px"></i>
+                            <i class="fab fa-instagram" style="margin-left:10px; margin-top:10px"></i>
+                            <i class="fab fa-linkedin" style="margin-left:10px; margin-top:10px"></i>
+                            <i class="fab fa-twitter" style="margin-left:10px; margin-top:10px"></i>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
+            </nav>
+        </header>
         <div class="container">
-            &copy; 2020 - All Rigts reserved to HARDI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
-</body>
+
+
+        @if (SigninManager.IsSignedIn(User))
+        {
+            await Html.RenderPartialAsync("_Chat.cshtml");
+        }
+
+
+        <footer class="border-top footer text-muted" style="background-color:red">
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+    </body>
+
+
+
 </html>
+<script>
+
+
+
+    var con = new signalR.HubConnectionBuilder().withUrl("/Chat").build();
+    $('#toggleChat').on('click', function () {
+
+        $('#Safaaa').toggleClass('hide-box  show-box'); //Adds 'a', removes 'b' and vice versa
+
+        $('#chatBox').toggleClass('show-box');
+
+
+      
+
+    });
+
+    con.start();
+
+    con.on('ReceiveMessage', function (FullName, msg) {
+
+        appendMsg(msg, FullName, 'received')
+
+
+    })
+
+    $('#messageInput').keypress(function (event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            con.invoke('SendMsg', $('#A').val(), $('#messageInput').val())
+            $('#messageInput').empty();
+        }
+    });
+
+
+    function appendMsg(msg, fullname, msgType) {
+        $('#chatBody').append(`
+        <div class="msg ${msgType}">
+            <div class="fullname">
+                ${fullname}
+            </div>
+            <div class="message">
+                ${msg}
+            </div>
+        </div>`);
+    }
+
+
+</script>

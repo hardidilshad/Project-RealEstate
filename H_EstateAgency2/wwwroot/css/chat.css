@@ -1,0 +1,120 @@
+﻿.chat-box {
+
+    position: fixed;
+    width: 250px;
+    height: 400px;
+    bottom: 0;
+    right: 10px;
+    border: 1px solid #B9C189;
+    z-index: 99999;
+}
+
+    .chat-box.hide-box {
+        margin-bottom: -365px;
+    }
+
+
+    .chat-box.show-box {
+        margin-bottom: 1px;
+    }
+    .chat-box .chat-header {
+        height: 35px;
+        font-size: 16px;
+        line-height: 34px;
+        padding-right: 6px;
+        background-color: lightgray;
+        border-bottom: 1px solid #B9C189;
+        user-select: none;
+        direction:ltr;
+    }
+
+    .chat-box .chat-body {
+        background-color: white;
+        height: 330px;
+        overflow-y: auto;
+    }
+
+        .chat-box .chat-body .msg {
+            margin: 4px;
+        }
+
+            .chat-box .chat-body .msg .fullname {
+                padding-bottom: 3px;
+                font-size: 11px;
+                color: #454545;
+                user-select: none;
+            }
+
+            .chat-box .chat-body .msg .message {
+                border: 1px solid #C2BD9F;
+                font-size: 14px;
+                padding: 2px 4px;
+            }
+
+            .chat-box .chat-body .msg.sent .message {
+                background-color: #EDF5BC;
+            }
+
+            .chat-box .chat-body .msg.received .message {
+                background-color: #F5ECBC;
+            }
+
+            .chat-box .chat-body .msg.received {
+                text-align: left;
+            }
+
+                .chat-box .chat-body .msg.received .message {
+                    background-color: #F5ECBC;
+                }
+
+
+    .chat-box .chat-control {
+        bottom: 0;
+        width: 248px;
+        border-top: 1px solid #D5D1D1;
+        position: absolute;
+        padding: 6px;
+    }
+        .chat-box .chat-control input {
+            border: none;
+            font-size: 14px;
+            width: 236px;
+        }
+
+            .chat-box .chat-control input:focus {
+                border: none;
+                outline: none;
+            }
+
+.toggleUsers {
+    position: absolute;
+    left: 32px;
+}
+
+.toggleChat {
+    position: absolute;
+    left: 8px;
+}
+
+.chat-box .chat-users {
+    z-index: 999999;
+    background-color: white;
+    height: 365px;
+    padding: 5px;
+    user-select: none;
+}
+
+    .chat-box .chat-users .user-is {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+.userActive {
+    background-color: forestgreen;
+}
+
+.userNotActive {
+    background-color: darkred;
+}
