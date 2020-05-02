@@ -26,6 +26,20 @@ namespace H_EstateAgency2.Controllers
             return View(await _context.Properties.ToListAsync());
         }
 
+
+        // search functionality
+        [HttpGet]
+        public async Task<IActionResult> Index(String PropertySearch)
+        {
+            ViewData["GetPropertyDetail"] = PropertySearch;
+            var properyquery = from x in _context.Properties select x;
+            if (!String.IsNullOrEmpty(PropertySearch))
+            {
+                properyquery = properyquery.Where(x => x.PropertyTitle.Contains(PropertySearch) || x.Ppurpose.Contains(PropertySearch) || x.PropertyType.Contains(PropertySearch));
+            }
+            return View(await properyquery.AsNoTracking().ToListAsync());
+        }
+
         // GET: Properties/Details/5
         [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
@@ -107,7 +121,7 @@ namespace H_EstateAgency2.Controllers
             {
                 _context.Add(@property);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Create", "Pictures");
             }
             return View(@property);
         }
