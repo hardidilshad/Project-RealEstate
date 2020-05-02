@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ahmed Safaa\\Source\\Repos\\hardidilshad\\Project-RealEstate\\H_EstateAgency2\\H_EstateAgency2.csproj": {}
+    "C:\\Users\\FATEH\\Source\\Repos\\hardidilshad\\Project-RealEstate_5\\H_EstateAgency2\\H_EstateAgency2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ahmed Safaa\\Source\\Repos\\hardidilshad\\Project-RealEstate\\H_EstateAgency2\\H_EstateAgency2.csproj": {
+    "C:\\Users\\FATEH\\Source\\Repos\\hardidilshad\\Project-RealEstate_5\\H_EstateAgency2\\H_EstateAgency2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ahmed Safaa\\Source\\Repos\\hardidilshad\\Project-RealEstate\\H_EstateAgency2\\H_EstateAgency2.csproj",
+        "projectUniqueName": "C:\\Users\\FATEH\\Source\\Repos\\hardidilshad\\Project-RealEstate_5\\H_EstateAgency2\\H_EstateAgency2.csproj",
         "projectName": "H_EstateAgency2",
-        "projectPath": "C:\\Users\\Ahmed Safaa\\Source\\Repos\\hardidilshad\\Project-RealEstate\\H_EstateAgency2\\H_EstateAgency2.csproj",
-        "packagesPath": "C:\\Users\\Ahmed Safaa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ahmed Safaa\\Source\\Repos\\hardidilshad\\Project-RealEstate\\H_EstateAgency2\\obj\\",
+        "projectPath": "C:\\Users\\FATEH\\Source\\Repos\\hardidilshad\\Project-RealEstate_5\\H_EstateAgency2\\H_EstateAgency2.csproj",
+        "packagesPath": "C:\\Users\\FATEH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FATEH\\Source\\Repos\\hardidilshad\\Project-RealEstate_5\\H_EstateAgency2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ahmed Safaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\FATEH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
