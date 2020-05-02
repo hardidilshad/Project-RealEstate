@@ -199,7 +199,7 @@ namespace H_EstateAgency2.Controllers
         public void populatePropertyIDs()
         {
             var propertyQuery = (from d in _context.Properties
-                                 orderby d.PublishingDate
+                                 orderby d.PropertyId descending
                                  select d).ToArray();
            
             ViewBag.PropertyId = new SelectList(propertyQuery, "PropertyId", "PropertyId");

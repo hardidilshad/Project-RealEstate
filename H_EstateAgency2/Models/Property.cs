@@ -23,6 +23,7 @@ namespace H_EstateAgency2.Models
         public int PropertyYearOfBuilt { get; set; }
         public string PropertyComBuilt { get; set; }
         public Boolean isAvailable { get; set; }
+        public Boolean isSpecialOffer { get; set; }
         public DateTime PublishingDate { get; set; }
         public string Description { get; set; }
         public virtual ICollection<Picture> pictures { get; set; }

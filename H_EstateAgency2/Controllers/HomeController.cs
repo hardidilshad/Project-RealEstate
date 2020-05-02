@@ -29,12 +29,12 @@ namespace H_EstateAgency2.Controllers
 
         }
 
-
-        public IActionResult Index()
+       
+        public async Task <IActionResult> Index()
         {
             try
             {
-                var result = _context.Properties.Where(x => x.isAvailable == true).ToList();
+                var result = _context.Properties.Where(x => x.isAvailable == true && x.isSpecialOffer == false).ToList();
 
                 foreach (var item in result)
                 {
@@ -57,9 +57,9 @@ namespace H_EstateAgency2.Controllers
 
 
         [HttpPost("GetResults")]
-        public async Task<IActionResult> Index([FromBody] PropertySearchModel searchModel)
+        public IActionResult Index([FromBody] PropertySearchModel searchModel)
         {
-            var result = _context.Properties.Where(x => x.isAvailable == true && (EF.Functions.Like(x.PropertyTitle,'%'+ searchModel.PropertySearch +"%"))).ToList();
+            var result = _context.Properties.Where(x => x.isAvailable == true && (EF.Functions.Like(x.PropertyTitle, '%' + searchModel.PropertySearch + "%"))).ToList();
 
             foreach (var item in result)
             {
@@ -71,7 +71,7 @@ namespace H_EstateAgency2.Controllers
 
 
             List<SearchResultModel> op = new List<SearchResultModel>();
-            foreach(var  item in result)
+            foreach (var item in result)
             {
                 op.Add(new SearchResultModel()
                 {
@@ -86,7 +86,8 @@ namespace H_EstateAgency2.Controllers
                     PropertyPrice = item.PropertyPrice
                     ,
                     picture = Convert.ToBase64String(item.pictures.FirstOrDefault().photo)
-                    ,PropertyId=item.PropertyId
+                    ,
+                    PropertyId = item.PropertyId
 
                 });
             }
@@ -94,30 +95,31 @@ namespace H_EstateAgency2.Controllers
             return Ok(op);
         }
 
-        public IActionResult Privacy()
+
+        public IActionResult Indexoffer()
         {
-            return View();
+            var result = _context.Properties.Where(x => x.isSpecialOffer == true).ToList();
+
+            foreach (var item in result)
+            {
+                var img = _context.Pictures.Where(x => x.PropertyId == item.PropertyId).FirstOrDefault();
+                if (item.pictures == null) item.pictures = new List<Picture>();
+                item.pictures.Add(img);
+            }
+
+            return View(result);
         }
+
+
+
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-
-
-
-
-        [HttpGet("AhmedSafaaa")]
-        public IActionResult AhmedSafaaa()
-        {
-
-
-            return View();
-        }
-        
-
 
     }
 }
