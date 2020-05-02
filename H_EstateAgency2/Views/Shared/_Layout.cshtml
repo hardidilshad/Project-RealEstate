@@ -100,7 +100,10 @@
 
         $('#chatBox').toggleClass('show-box');
 
+        if ($('#Safaaa').hasClass('show-box')) {
 
+            $('#Notifi').text(0);
+        }
       
 
     });
@@ -108,10 +111,14 @@
     con.start();
 
     con.on('ReceiveMessage', function (FullName, msg) {
-
+        var i = 1;
         appendMsg(msg, FullName, 'received')
+        if (FullName != $('#A').val()&& !$('#Safaaa').hasClass('show-box')) {
+              $('#Notifi').text(parseInt($('#Notifi').text(),10) +1);
+        }
+      
 
-
+        i++;
     })
 
     $('#messageInput').keypress(function (event) {
@@ -119,6 +126,7 @@
         if (keycode == '13') {
             con.invoke('SendMsg', $('#A').val(), $('#messageInput').val())
             $('#messageInput').val(null);
+             
         }
     });
 
